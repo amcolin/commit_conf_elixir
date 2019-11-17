@@ -65,12 +65,69 @@
 					<p>
 						<strong>Todo</strong> funciona, <strong>todo</strong> el tiempo
 					</p>
+					<aside class="notes">
+						Esto es imposible: el software tiene errores, el hardware falla,
+						las redes fallan
+					</aside>
 				</section>
 				<section>
 					<p><strong>Alta disponibilidad</strong></p>
 					<p>
 						<strong>Casi</strong> todo funciona, <strong>casi</strong> todo el tiempo
 					</p>
+					<aside class="notes">
+						A esto es a lo que podemos aspirar.
+						Depende de cada sistema definir que es ese "casi" que no debe fallar.
+					</aside>
+				</section>
+				<section>
+					<p><strong>Alta disponibilidad</strong></p>
+					<p>Porcentaje de tiempo que el sistema estuvo disponible durante
+						el año.
+					</p>
+				</section>
+				<section>
+					<table>
+						<thead>
+							<tr>
+								<th>Disponibilidad</th>
+								<th>Tiempo no disponible en el año</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>9,99% (3s nueves)</td>
+								<td>8,77 horas	</td>
+							</tr>
+							<tr>
+								<td>9,95% (3s nueves cinco)</td>
+								<td>4,38 horas</td>
+							</tr>
+							<tr>
+								<td>9,999% (4 nueves)</td>
+								<td>52,6 minutos</td>
+							</tr>
+							<tr>
+								<td>9,9999% (5 nueves)</td>
+								<td>5,26 minutos</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<img src="img/erlang.png" alt="erlang logo"/>
+					<aside class="notes">
+						Durante esta charla hablaremos de la plataforma Erlang (y de Elixir)
+						y de las partes que nos ayudan a tener alta disponibilidad
+					</aside>
+				</section>
+				<section>
+					<img src="img/erlang_the_movie.jpg" alt="erlang creators"/>
+					<aside class="notes">
+						Erlang se creo en los 80's en Ericsson por
+						Joe Armstrong, Robert Virdring y Mike Williams
+						y se usó en un principio para Switches de telecomunicaciones
+					</aside>
 				</section>
 				<section>
 					<q>
@@ -78,24 +135,37 @@
 					</q>
 					<p><strong>Joe Armstrong</strong></p>
 				</section>
-
-				<section>
-					<img src="img/erlang.png" alt="erlang logo"/>
-				</section>
-
-				<section>
-					<img src="img/erlang_the_movie.jpg" alt="erlang creators"/>
-				</section>
-
 				<section>
 					<img src="img/elixir_logo.png" alt="elixir logo"/>
 				</section>
-
+				<section>
+						<img src="img/elixir_beam.png" alt="erlang ecosystem"/>
+				</section>
 				<section>
 					<img src="img/jose_valim.jpg" alt="elixir creator jose valim"/>
 				</section>
-
-				<!-- Example of nested vertical slides -->
+				<section>
+					<img src="img/companies.png" alt="empresas que usan erlang"/>
+					<aside class="notes">
+						Elixir ayudó a sacar a Erlang del nicho de sistemas de telecomunicaciones
+						y a bajar la barrera de entrada para que nuevos programadores usaran esa plataforma.
+					</aside>
+				</section>
+				<section>
+					<p>¿Cómo logras Alta Disponibilidad con Erlang?</p>
+					<p class="fragment fade-up"><strong>Procesos</strong></p>
+				</section>
+				<section>
+					<img style="width:70%;" src="img/beam_procesos.png" alt="procesos en la maquina virtual"/>
+				</section>
+				<section>
+					<h2>Demo</h2>
+					<aside class="notes">
+						1: Un proceso simple
+						2: Paso de mensajes (ping pong)
+						3: Crear muchos procesos
+					</aside>
+				</section>
 				<section>
 					<section>
 						<h2>Vertical Slides</h2>
