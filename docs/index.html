@@ -136,7 +136,7 @@
 					<p><strong>Joe Armstrong</strong></p>
 				</section>
 				<section>
-					<img src="img/elixir_logo.png" alt="elixir logo"/>
+					<img style="width: 50%;" src="img/elixir_logo.png" alt="elixir logo"/>
 				</section>
 				<section>
 						<img src="img/elixir_beam.png" alt="erlang ecosystem"/>
@@ -156,7 +156,7 @@
 					<p class="fragment fade-up"><strong>Procesos</strong></p>
 				</section>
 				<section>
-					<h2>Demo</h2>
+					<h2>Demo: Empezando con Elixir</h2>
 					<aside class="notes">
 						1: Un proceso simple
 						2: Paso de mensajes (ping pong)
@@ -173,34 +173,39 @@
 					</aside>
 				</section>
 				<section>
+					<h2>La única forma de comunicar procesos es mediante paso de mensajes</h2>
+				</section>
+				<section>
 					<h2>Los procesos son aislados</h2>
 					<h2 class="fragment fade-up"><strong>Demo</strong></h2>
 					<aside class="notes">
 						Demo que muestra que el servicio devuelve errores pero no truena.
 					</aside>
 				</section>
+				<section data-background="img/crash.jpg">
+					<h2>Let it crash!</h2>
+				</section>
 				<section>
 					<h2>Analogía: ¿Cómo funciona un Sistema Operativo?</h2>
 				</section>
+				<section data-background="img/app-crash.gif"></section>
+				<section data-background="img/appcrashing.gif"></section>
 				<section>
-					<h2>El scheduler es preemptive (apropiativo)</h2>
+					<h2>¿Por qué tus apps no deberían funcionar de la misma forma?</h2>
+				</section>
+				<section data-background="img/pandas.gif">
+					<h2>2. El scheduler es preemptive (apropiativo)</h2>
 					<h2 class="fragment fade-up"><strong>Demo</strong></h2>
 					<aside class="notes">
 						Demo que muestra que una tarea que ocupa mucho CPU no bloquea otras tareas
 					</aside>
 				</section>
 				<section>
-					<h2>Herramientas de debugging</h2>
+					<h2>3. Herramientas de debugging</h2>
 					<h2 class="fragment fade-up"><strong>Demo</strong></h2>
 					<aside class="notes">
 						Demo desde IEX para detectar la función problemática y matarla
 					</aside>
-				</section>
-				<section>
-					<h2>Hot deploy</h2>
-				</section>
-				<section>
-					<h2>Supervisores, Swarm?, Task.async / Task.await, GenServers</h2>
 				</section>
 				<section>
 					<h2>Enlaces</h2>
