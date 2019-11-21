@@ -53,13 +53,12 @@
 					</p>
 				</section>
 
-				<section>
+				<section data-background="img/mex-sto.png">
 					<h2>Acerca de nosotros</h2>
-					<p>
-						bla bla
-					</p>
 				</section>
-
+				<section>
+					<h2>¿De qué vamos a hablar?</h2>
+				</section>
 				<section>
 					<p><strong>Total disponibilidad</strong></p>
 					<p>
@@ -133,7 +132,7 @@
 					<q>
 						¿Cómo podemos programar sistemas que se comporten de forma razonable ante la presencia de errores?
 					</q>
-					<p><strong>Joe Armstrong</strong></p>
+					<p><strong>Joe Armstrong, 2003, tésis de doctorado</strong></p>
 				</section>
 				<section>
 					<img style="width: 50%;" src="img/elixir_logo.png" alt="elixir logo"/>
@@ -152,15 +151,25 @@
 					</aside>
 				</section>
 				<section>
-					<p>¿Cómo logras Alta Disponibilidad con Erlang?</p>
-					<p class="fragment fade-up"><strong>Procesos</strong></p>
+					<h2>¿Cómo logras Alta Disponibilidad con Elixir?</h2>
+					<h2 class="fragment fade-up">Con procesos</h2>
 				</section>
 				<section>
-					<h2>Demo: Empezando con Elixir</h2>
+					<h2>Veamos un ejemplo</h2>
 					<aside class="notes">
 						1: Un proceso simple
 						2: Paso de mensajes (ping pong)
 						3: Crear muchos procesos
+					</aside>
+				</section>
+				<section data-background="img/install.png">
+				</section>
+				<section>
+					<h2>Demo</h2>
+					<aside class="notes">
+						1: Crear proyecto, listas
+						2: Paso de mensajes (ping pong)
+						3: Crear muchos procesos (web)
 					</aside>
 				</section>
 				<section>
@@ -191,24 +200,54 @@
 				<section data-background="img/app-crash.gif"></section>
 				<section data-background="img/appcrashing.gif"></section>
 				<section>
-					<h2>¿Por qué tus apps no deberían funcionar de la misma forma?</h2>
-				</section>
-				<section data-background="img/pandas.gif">
-					<h2>2. El scheduler es preemptive (apropiativo)</h2>
-					<h2 class="fragment fade-up"><strong>Demo</strong></h2>
-					<aside class="notes">
-						Demo que muestra que una tarea que ocupa mucho CPU no bloquea otras tareas
-					</aside>
+					<q>La clave para el software tolerante a fallos es descomponer los sistemas grandes en módulos, cada módulo será una unidad de servicio y una unidad de fallo. Un fallo en un módulo no se propaga más allá de dicho módulo.</q>
+				<p><strong>Jim Gray, Porqué las computadores se detienen y qué podemos hacer al respecto</strong></p>
 				</section>
 				<section>
-					<h2>3. Herramientas de debugging</h2>
+					<p>Sin embargo, seguimos haciendo apps como si fueran Sistemas Operativos de los 60's</p>
+					<p class="fragment fade-up"><strong >¿Por qué tus apps no deberían funcionar de la misma forma?</strong></h2>
+				</section>
+				<section>
+					<h2>¡Los procesos son socialistas!</h2>
+					<p class="fragment fade-up">No pueden monopolizar el CPU</p>
+				</section>
+				<section>
+						<h2>Demo</h2>
+						<aside class="notes">
+							Demo que muestra que una tarea que ocupa mucho CPU no bloquea otras tareas
+						</aside>
+					</section>
+				<section data-background="img/pandas.gif">
+					<h2>El scheduler es preemptive* (apropiativo)</h2>
+				</section>
+				<section>
+					<h2>Es fácil encontrar procesos problemáticos</h2>
 					<h2 class="fragment fade-up"><strong>Demo</strong></h2>
 					<aside class="notes">
 						Demo desde IEX para detectar la función problemática y matarla
+						Mostrar el observer
 					</aside>
 				</section>
 				<section>
-					<h2>Enlaces</h2>
+					<p>Los procesos tienen identidad.</p>
+					<p>La identidad es el PID o su nombre.</p>
+				</section>
+				<section>
+					<p>Entonces</p>
+					<p>¿Cómo podemos programar sistemas que se comporten de forma razonable ante la presencia de errores?</p>
+					<ul>
+						<li  class="fragment fade-up">Procesos pequeños y aislados</li>
+						<li class="fragment fade-up">Paso de mensajes</li>
+						<li class="fragment fade-up">Tolerancia a fallos</li>
+						<li class="fragment fade-up">Scheduler apropiativo</li>
+						<li class="fragment fade-up">Debugging fácil</li>
+					</ul>
+				</section>
+				<section>
+					<p>Eso es Elixir! DAB</p>
+					<p>Gracias</p>
+					<p>@AnayeliMalvaez</p>
+					<p>@ecamacho</p>
 				</section>
 			</div>
 
