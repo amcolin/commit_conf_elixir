@@ -211,14 +211,24 @@
 					<h2>¡Los procesos son socialistas!</h2>
 					<p class="fragment fade-up">No pueden monopolizar el CPU</p>
 				</section>
+				<section data-background="img/panda_slide.gif">
+					<p>Pongamos un ejemplo</p>
+				</section>
+				<section data-background="img/panda_blocking.gif">
+					<p>Un proceso podría bloquear al resto</p>
+				</section>
 				<section>
-						<h2>Demo</h2>
+						<h2>¿Cómo funciona en Elixir?</h2>
 						<aside class="notes">
 							Demo que muestra que una tarea que ocupa mucho CPU no bloquea otras tareas
 						</aside>
 					</section>
+					<section data-background="img/panda_unblocking.gif">
+						<h2>El scheduler es preemptive* (apropiativo)</h2>
+					</section>
 				<section data-background="img/pandas.gif">
-					<h2>El scheduler es preemptive* (apropiativo)</h2>
+					<p>El scheduler es preemptive* (apropiativo)</p>
+					<p>Un proceso que use muchos recursos, no bloquea a los demás.</p>
 				</section>
 				<section>
 					<h2>Es fácil encontrar procesos problemáticos</h2>
