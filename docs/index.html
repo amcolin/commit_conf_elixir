@@ -129,9 +129,9 @@
 					</aside>
 				</section>
 				<section>
-					<q>
+					<blockquote>
 						¿Cómo podemos programar sistemas que se comporten de forma razonable ante la presencia de errores?
-					</q>
+					</blockquote>
 					<p><strong>Joe Armstrong, 2003, tésis de doctorado</strong></p>
 				</section>
 				<section>
@@ -184,6 +184,9 @@
 				<section>
 					<h2>La única forma de comunicar procesos es mediante paso de mensajes</h2>
 				</section>
+				<section data-background-video="img/phoenix_processes.mov">
+					<p>Así se ven los procesos de un sistema real.</p>
+				</section>
 				<section>
 					<h2>Los procesos son aislados</h2>
 					<h2 class="fragment fade-up"><strong>Demo</strong></h2>
@@ -191,8 +194,8 @@
 						Demo que muestra que el servicio devuelve errores pero no truena.
 					</aside>
 				</section>
-				<section data-background="img/crash.jpg">
-					<h2>Let it crash!</h2>
+				<section data-background="img/crash.gif">
+					<p>Let it crash!</p>
 				</section>
 				<section>
 					<h2>Analogía: ¿Cómo funciona un Sistema Operativo?</h2>
@@ -200,12 +203,12 @@
 				<section data-background="img/app-crash.gif"></section>
 				<section data-background="img/appcrashing.gif"></section>
 				<section>
-					<q>La clave para tener software tolerante a fallos es descomponer los sistemas grandes en módulos, cada módulo será una unidad de servicio
-						y una unidad de fallo. Un fallo en un módulo no se propaga más allá de dicho módulo.</q>
-				<p><strong>Jim Gray, 1985, Porqué las computadores se detienen y qué podemos hacer al respecto</strong></p>
+					<blockquote>La clave para tener software tolerante a fallos es descomponer los sistemas grandes en módulos, cada módulo será una unidad de servicio
+						y una unidad de fallo. Un fallo en un módulo no se propaga más allá de dicho módulo.</blockquote>
+				<p><strong>Jim Gray, 1985, ¿Por qué las computadores se detienen y qué podemos hacer al respecto?</strong></p>
 				</section>
 				<section>
-					<p>Sin embargo, seguimos haciendo apps como si fueran Sistemas Operativos de los 60's</p>
+					<p>Sin embargo, seguimos haciendo apps como si toda la app fuera una unidad de fallo.</p>
 					<p class="fragment fade-up"><strong >¿Por qué tus apps no deberían funcionar de la misma forma?</strong></h2>
 				</section>
 				<section>
@@ -219,7 +222,8 @@
 					<p>Un proceso podría bloquear al resto</p>
 				</section>
 				<section>
-						<h2>¿Cómo funciona en Elixir?</h2>
+						<p>¿Cómo funciona esto en Elixir?</p>
+						<p class="fragment fade-down">Demo</p>
 						<aside class="notes">
 							Demo que muestra que una tarea que ocupa mucho CPU no bloquea otras tareas
 						</aside>
@@ -244,7 +248,7 @@
 					<p>La identidad es el PID o su nombre.</p>
 				</section>
 				<section>
-					<p>Entonces</p>
+					<p>Regresando a nuestra pregunta?</p>
 					<p>¿Cómo podemos programar sistemas que se comporten de forma razonable ante la presencia de errores?</p>
 					<ul>
 						<li  class="fragment fade-up">Procesos pequeños y aislados</li>
