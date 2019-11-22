@@ -41,18 +41,8 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
-					<h3>Sistemas con alta disponibilidad en Elixir </h3>
-
-					<p>
-						<small>Anayeli Malvaez <a href="https://twitter.com/anayelimalvaez">(@AnayeliMalvaez)</a>
-							y Erick Camacho <a href="https://twitter.com/ecamacho">(@ecamacho)</a></small>
-					</p>
-					<p>
-						<small>Commit Conf 2019</small>
-					</p>
+				<section data-background="img/portada.svg">
 				</section>
-
 				<section data-background="img/mex-sto.png">
 					<h2>Acerca de nosotros</h2>
 				</section>
@@ -186,7 +176,7 @@
 					<p>La única forma de comunicar procesos es mediante paso de mensajes</p>
 				</section>
 				<section>
-					<pre><code class="hljs" data-trim >
+					<pre><code class="hljs" data-trim data-line-numbers>
 	def pong do
     receive do
       {sender, :ping} ->
@@ -214,7 +204,7 @@ def pong do
 					</pre>
 				</section>
 				<section>
-					<pre><code class="hljs" data-trim >
+					<pre><code class="hljs" data-trim data-line-numbers>
   def ping do
     receive do
       {sender, :pong} ->
@@ -228,7 +218,7 @@ def pong do
 					</pre>
 				</section>
 				<section>
-					<pre><code class="hljs" data-trim >
+					<pre><code class="hljs" data-trim data-line-numbers>
 def start do
   ping_id = spawn(fn -> ping end)
   pong_id = spawn(fn -> pong end)
@@ -279,10 +269,10 @@ end
 					<p class="fragment fade-up">Los procesos no pueden monopolizar el CPU</p>
 				</section>
 				<section data-background="img/panda_slide.gif">
-					<p>Pongamos un ejemplo</p>
+					<p style="color: white;">Pongamos un ejemplo</p>
 				</section>
 				<section data-background="img/panda_blocking.gif">
-					<p>Un proceso podría bloquear al resto</p>
+					<p style="color: white;">Un proceso podría bloquear al resto</p>
 				</section>
 				<section>
 						<p>¿Cómo funciona esto en Elixir?</p>
@@ -291,12 +281,11 @@ end
 							Demo que muestra que una tarea que ocupa mucho CPU no bloquea otras tareas
 						</aside>
 					</section>
-					<section data-background="img/panda_unblocking.gif">
+					<section class="withe_text" data-background="img/panda_unblocking.gif">
 						<h2>El scheduler es preemptive* (apropiativo)</h2>
 					</section>
 				<section data-background="img/pandas.gif">
-					<p>El scheduler es preemptive* (apropiativo)</p>
-					<p>Un proceso que use muchos recursos, no bloquea a los demás.</p>
+					<p class="custom_marging">Un proceso que use muchos recursos, no bloquea a los demás.</p>
 				</section>
 				<section>
 					<h2>Es fácil encontrar procesos problemáticos</h2>
