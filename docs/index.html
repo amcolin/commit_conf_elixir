@@ -19,7 +19,7 @@
 		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+		<link rel="stylesheet" href="css/lib/monokai.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -167,9 +167,8 @@
 				<section>
 					<h2>Demo</h2>
 					<aside class="notes">
-						1: Crear proyecto, listas
-						2: Paso de mensajes (ping pong)
-						3: Crear muchos procesos (web)
+						1: Crear proyecto, listas y spwan
+						2: Crear muchos procesos (web)
 					</aside>
 				</section>
 				<section>
@@ -182,7 +181,69 @@
 					</aside>
 				</section>
 				<section>
-					<h2>La única forma de comunicar procesos es mediante paso de mensajes</h2>
+					<p>La única forma de comunicar procesos es mediante paso de mensajes</p>
+				</section>
+				<section>
+					<pre><code class="hljs" data-trim >
+	def pong do
+    receive do
+      {sender, :ping} ->
+        IO.puts("ping")
+        :timer.sleep(1_000)
+        send(sender, {self(), :pong})
+    end
+    pong()
+  end
+					</code>
+					</pre>
+				</section>
+				<section>
+					<pre><code class="hljs" data-trim data-line-numbers="2,6-8" >
+def pong do
+    receive do
+      {sender, :ping} ->
+        IO.puts("ping")
+        :timer.sleep(1_000)
+        send(sender, {self(), :pong})
+    end
+    pong()
+  end
+					</code>
+					</pre>
+				</section>
+				<section>
+					<pre><code class="hljs" data-trim >
+  def ping do
+    receive do
+      {sender, :pong} ->
+        IO.puts("pong")
+        :timer.sleep(1_000)
+        send(sender, {self(), :ping})
+    end
+    pong()
+  end
+					</code>
+					</pre>
+				</section>
+				<section>
+					<pre><code class="hljs" data-trim >
+def start do
+  ping_id = spawn(fn -> ping end)
+  pong_id = spawn(fn -> pong end)
+  send(pong_id, {ping_id, :ping})
+  {ping_id, pong_id}
+end
+					</code>
+					</pre>
+				</section>
+				<section>
+					<p>Veamos como funciona en línea de comandos</p>
+					<aside class="notes">
+						Ejecutar ./run.sh
+					</aside>
+				</section>
+				<section data-background-video="img/pingpong.mov">
+
 				</section>
 				<section data-background-video="img/phoenix_processes.mov">
 					<p>Así se ven los procesos de un sistema real.</p>
@@ -212,8 +273,8 @@
 					<p class="fragment fade-up"><strong >¿Por qué tus apps no deberían funcionar de la misma forma?</strong></h2>
 				</section>
 				<section>
-					<h2>¡Los procesos son socialistas!</h2>
-					<p class="fragment fade-up">No pueden monopolizar el CPU</p>
+					<h2>¡Erlang es igualitario!</h2>
+					<p class="fragment fade-up">Los procesos no pueden monopolizar el CPU</p>
 				</section>
 				<section data-background="img/panda_slide.gif">
 					<p>Pongamos un ejemplo</p>

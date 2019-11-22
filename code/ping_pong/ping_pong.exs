@@ -1,8 +1,8 @@
 defmodule PingPong do
 
   def start do
-    ping_id = spawn(&ping/0)
-    pong_id = spawn(&pong/0)
+    ping_id = spawn(fn -> ping() end)
+    pong_id = spawn(fn -> pong() end)
     send(pong_id, {ping_id, :ping})
     {ping_id, pong_id}
   end
