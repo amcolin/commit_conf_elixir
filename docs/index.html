@@ -176,7 +176,8 @@
 					</aside>
 				</section>
 				<section>
-					<p>La única forma de comunicar procesos es mediante paso de mensajes</p>
+							<p>La única forma de comunicar procesos es mediante paso de mensajes</p>
+							<img src="img/ping_pong.gif" alt="">
 				</section>
 				<section>
 					<pre><code class="hljs" data-trim data-line-numbers>
@@ -193,7 +194,7 @@
 					</pre>
 				</section>
 				<section>
-					<pre><code class="hljs" data-trim data-line-numbers="2,6-8" >
+					<pre><code class="hljs" data-trim data-line-numbers="2,3,6,8" >
 def pong do
     receive do
       {sender, :ping} ->
@@ -207,7 +208,7 @@ def pong do
 					</pre>
 				</section>
 				<section>
-					<pre><code class="hljs" data-trim data-line-numbers="1,6">
+					<pre><code class="hljs" data-trim data-line-numbers="1,3,6">
   def ping do
     receive do
       {sender, :pong} ->
@@ -215,7 +216,7 @@ def pong do
         :timer.sleep(1_000)
         send(sender, {self(), :ping})
     end
-    pong()
+    ping()
   end
 					</code>
 					</pre>
