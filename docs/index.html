@@ -255,17 +255,13 @@ end
 					<p style="color: white; -webkit-text-stroke: .5px gray; font-size: 100px;">Let it crash!</p>
 				</section>
 				<section>
-					<h2>Analogía: ¿Cómo funciona un Sistema Operativo?</h2>
-				</section>
-				<section data-background="img/app-crash.gif"></section>
-				<section data-background="img/appcrashing.gif"></section>
-				<section>
 					<blockquote>La clave para tener software tolerante a fallos es descomponer los sistemas grandes en módulos, cada módulo será una unidad de servicio
 						y una unidad de fallo. Un fallo en un módulo no se propaga más allá de dicho módulo.</blockquote>
 				<p>Jim Gray, 1985, ¿Por qué las computadores se detienen y qué podemos hacer al respecto?</p>
 				</section>
+				<section data-background="img/app-crash.gif"></section>
 				<section>
-					<p>Sin embargo, seguimos haciendo apps como si toda la app fuera una unidad de fallo.</p>
+					<p>Sin embargo, en otras plataformas si algo falla en nuestra app, toda nuestra app falla.</p>
 					<p class="fragment fade-up"><strong >¿Por qué tus apps no deberían funcionar de la misma forma?</strong></h2>
 				</section>
 				<section>
@@ -279,15 +275,12 @@ end
 					<p style="color: white; -webkit-text-stroke: .5px gray; font-size: 90px;">Un proceso podría bloquear al resto</p>
 				</section>
 				<section>
-						<p>¿Cómo funciona esto en Elixir?</p>
-						<p class="fragment fade-down">Demo</p>
-						<aside class="notes">
-							Demo que muestra que una tarea que ocupa mucho CPU no bloquea otras tareas
-						</aside>
-					</section>
-					<section class="withe_text" data-background="img/panda_unblocking.gif">
-						<h2>El scheduler es preemptive* (apropiativo)</h2>
-					</section>
+					<p>¿Cómo funciona esto en Elixir?</p>
+					<p class="fragment fade-down">Demo</p>
+					<aside class="notes">
+						Demo que muestra que una tarea que ocupa mucho CPU no bloquea otras tareas
+					</aside>
+				</section>
 				<section data-background="img/pandas.gif">
 					<p class="custom_marging">Un proceso que use muchos recursos, no bloquea a los demás.</p>
 				</section>
@@ -299,13 +292,9 @@ end
 						Mostrar el observer
 					</aside>
 				</section>
-				<section>
-					<p>Los procesos tienen identidad.</p>
-					<p>La identidad es el PID o su nombre.</p>
-				</section>
-				<section>
+
 				<section data-background="img/discord.jpg">
-					
+
 				</section>
 				<section>
 					<table>
