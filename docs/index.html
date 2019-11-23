@@ -194,7 +194,35 @@
 					</pre>
 				</section>
 				<section>
-					<pre><code class="hljs" data-trim data-line-numbers="2,3,6,8" >
+					<pre><code class="hljs" data-trim data-line-numbers="2,3,7" >
+def pong do
+    receive do
+      {sender, :ping} ->
+        IO.puts("ping")
+        :timer.sleep(1_000)
+        send(sender, {self(), :pong})
+    end
+    pong()
+  end
+					</code>
+					</pre>
+				</section>
+				<section>
+					<pre><code class="hljs" data-trim data-line-numbers="6" >
+def pong do
+    receive do
+      {sender, :ping} ->
+        IO.puts("ping")
+        :timer.sleep(1_000)
+        send(sender, {self(), :pong})
+    end
+    pong()
+  end
+					</code>
+					</pre>
+				</section>
+				<section>
+					<pre><code class="hljs" data-trim data-line-numbers="8" >
 def pong do
     receive do
       {sender, :ping} ->
@@ -268,6 +296,9 @@ end
 				<section>
 					<h2>¡Erlang es igualitario!</h2>
 					<p class="fragment fade-up">Los procesos no pueden monopolizar el CPU</p>
+				</section>
+				<section>
+					<p>Hablemos de <strong>el scheduler</strong> (planificador de tareas)</p>
 				</section>
 				<section data-background="img/panda_slide.gif">
 					<p style="color: white; -webkit-text-stroke: .5px gray; font-size: 90px;">Pongamos un ejemplo</p>
